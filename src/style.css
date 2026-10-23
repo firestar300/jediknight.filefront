@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-verdana: Verdana, Helvetica, sans-serif;
+
+  --color-site: #4e5a64;
+  --color-panel: #4e505a;
+  --color-box: #545454;
+  --color-blurb: #454752;
+  --color-input: #3f4c52;
+  --color-link: #9dd5d4;
+  --color-link-hover: #cee2e2;
+  --color-network: #287ed4;
+  --color-row-a: #315261;
+  --color-row-b: #192c35;
+}
+
+@layer base {
+  html {
+    scrollbar-color: #545454 #4e5a64;
+  }
+
+  body {
+    @apply bg-site font-sans text-xs text-white;
+  }
+
+  a {
+    @apply text-link no-underline;
+  }
+
+  a:hover,
+  a:active {
+    @apply text-link-hover underline;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-1 outline-link-hover;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .field {
+    @apply h-[19px] border border-white bg-input px-1 align-middle text-xs text-white;
+  }
+
+  .btn {
+    @apply cursor-pointer border border-white bg-box px-1.5 align-middle text-xs text-white hover:bg-[#666];
+  }
+
+  .box {
+    @apply border-y border-black bg-panel;
+  }
+
+  .box-title {
+    @apply h-[26px] border-b border-black bg-box text-center text-base leading-[26px] font-bold;
+  }
+
+  .tab-title {
+    @apply relative h-[14px] bg-panel text-center text-[11px] leading-[14px] font-bold;
+  }
+
+  .side-title {
+    @apply mt-1 border-t border-black bg-linear-to-r from-[#2c3238] via-[#3d434b] to-transparent px-1 text-xs leading-[14px] font-bold;
+  }
+
+  .side-list > li::before {
+    content: "» ";
+  }
+
+  .side-list ul > li::before {
+    content: "- ";
+    @apply pl-2.5;
+  }
+
+  .data-table {
+    @apply w-full border-collapse text-xs;
+  }
+
+  .data-table th {
+    @apply bg-box px-1 font-bold whitespace-nowrap;
+  }
+
+  .data-table td {
+    @apply px-1 align-top leading-[14px];
+  }
+
+  .thumb {
+    @apply block border border-black bg-black;
+  }
+
+  .badge-88 {
+    @apply flex h-[31px] w-[88px] items-center justify-center border border-black text-[11px] leading-none font-bold tracking-wide text-white uppercase hover:no-underline;
+  }
+}

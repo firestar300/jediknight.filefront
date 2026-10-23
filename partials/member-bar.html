@@ -1,0 +1,58 @@
+<!-- Member bar -->
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 bg-black px-2 py-[3px] text-[11px]">
+	<form class="flex flex-wrap items-center gap-1" action="/members/login" method="post">
+		<label for="username" class="bg-[#ccc] px-1 font-bold leading-[17px] text-black">Username:</label>
+		<input id="username" name="username" type="text" autocomplete="username" class="field w-[60px]" />
+		<label for="password" class="ml-2 bg-[#ccc] px-1 font-bold leading-[17px] text-black">Password:</label>
+		<input id="password" name="password" type="password" autocomplete="current-password" class="field w-[60px]" />
+		<button type="submit" class="btn ml-1 h-[19px] bg-[#ddd] font-bold text-black hover:bg-white">Log in</button>
+	</form>
+	<p class="text-[11px]">
+		<a href="/members/register">[Register]</a>
+		<span>[742408 Members]</span>
+		<span>[120049 Online; 1248 Members, 118801 Guests]</span>
+	</p>
+	<div class="relative ml-auto" data-network>
+		<button
+			type="button"
+			class="h-[17px] w-[146px] border border-black bg-network font-verdana text-[11px] font-bold text-white"
+			aria-expanded="false"
+			aria-controls="network-menu"
+			data-network-toggle
+		>
+			FileFront Network
+		</button>
+		<ul
+			id="network-menu"
+			class="absolute right-0 z-40 w-[180px] border border-black bg-network font-verdana text-[10px]"
+			hidden
+		>
+			<li class="px-1 pt-1 font-bold">General Downloads</li>
+			<li><a class="block px-2 text-white hover:text-black" href="/news">Gaming Today</a></li>
+			<li><a class="block px-2 text-white hover:text-black" href="/demos">Game Demos</a></li>
+			<li><a class="block px-2 text-white hover:text-black" href="/videos">Trailer Videos</a></li>
+			<li><a class="block px-2 text-white hover:text-black" href="/patches">Game Patches</a></li>
+			<li class="px-1 pt-1 font-bold">Game-specific Communities</li>
+			<li><a class="block px-2 text-white hover:text-black" href="/">Jedi Knight 3</a></li>
+			<li><a class="block px-2 pb-1 text-white hover:text-black" href="/jk2">Jedi Knight 2</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="border-y border-black bg-black">
+	<a href="/" class="block">
+		<picture>
+			<source srcset="/images/banner.avif" type="image/avif" />
+			<source srcset="/images/banner.webp" type="image/webp" />
+			<img
+				src="/images/banner.jpg"
+				width="980"
+				height="101"
+				alt="Jedi Knight Files home"
+				fetchpriority="high"
+				decoding="async"
+				class="block h-auto w-full"
+			/>
+		</picture>
+	</a>
+</div>
